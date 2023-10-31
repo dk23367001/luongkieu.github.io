@@ -24,32 +24,32 @@ void loop() {
     Serial.print(trangthaict2);
 
 
-    if(thcbmua==1) //Dang khong mua
+    if(thcbmua==1) //雨降がらない
     {
        if(trangthaict1!=1)
       {
-        len();
+        up();
       }
-      else {dung();}
+      else {stop();}
     }
-    else //Co Mua
+    else //雨が降る
     {
-      if(trangthaict2!=1)//co mua va cua dang mo
+      if(trangthaict2!=1)
     {
-      xuong();
+      down();
       }
-      else {dung();}
+      else {stop();}
     }
 }
-void len(){
+void up(){
   digitalWrite(in3,HIGH);
   digitalWrite(in4,LOW);
   }
- void xuong(){
+ void down(){
   digitalWrite(in3,LOW);
   digitalWrite(in4,HIGH);
   }
- void dung(){
+ void stop(){
   
   digitalWrite(in3,LOW);
   digitalWrite(in4,LOW);
